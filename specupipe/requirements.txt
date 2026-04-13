@@ -1,0 +1,9 @@
+pytest
+numpy
+matplotlib
+torch
+transformers
+streamlit
+pandas
+tqdm
+
