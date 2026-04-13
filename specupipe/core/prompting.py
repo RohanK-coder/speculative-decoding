@@ -35,5 +35,16 @@ def format_question_for_family(question: str, family: str, detail_level: str = "
             "<|im_end|>\n"
             "<|im_start|>assistant\n"
         )
+    
+    if family == "smollm2":
+        return (
+            "<|im_start|>system\n"
+            f"You are a helpful assistant. {instruction}\n"
+            "<|im_end|>\n"
+            "<|im_start|>user\n"
+            f"{question}\n"
+            "<|im_end|>\n"
+            "<|im_start|>assistant\n"
+        )
 
     return question

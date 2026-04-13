@@ -37,6 +37,14 @@ MODEL_FAMILIES = {
         "recommended_tokens": 48,
         "recommended_mode": "hybrid",
     },
+    "smollm2": {
+    "draft": "HuggingFaceTB/SmolLM2-360M-Instruct",
+    "target": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "label": "SmolLM2 Draft/Target",
+    "recommended_k": 3,
+    "recommended_tokens": 32,
+    "recommended_mode": "hybrid",
+},
 }
 
 
@@ -46,7 +54,7 @@ st.title("SpecuPipe: True Streaming Speculative Decoding Dashboard")
 
 with st.sidebar:
     st.header("Settings")
-    family = st.selectbox("Model Family", ["gpt2", "tinyllama", "qwen"])
+    family = st.selectbox("Model Family", ["gpt2", "tinyllama", "qwen","smollm2"], index=0)
     cfg = MODEL_FAMILIES[family]
 
     question = st.text_area(

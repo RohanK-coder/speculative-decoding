@@ -110,7 +110,11 @@ def stream_speculative_greedy_decode(
                     "type": "token",
                     "text": current_text,
                     "round_id": round_id,
-                    "mode_used": "baseline_fallback",
+                    "accepted": accepted,
+                    "drafted": drafted_count,
+                    "rejected": rejected,
+                    "acceptance_rate_so_far": metrics.acceptance_rate,
+                    "generated_tokens": new_tokens_generated,
                 }
 
                 if eos_token_id is not None and prefix[0, -1].item() == eos_token_id:
